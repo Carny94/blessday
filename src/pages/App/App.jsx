@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import {Routes, Route} from 'react-router-dom'
 import AuthPage from '../AuthPage/AuthPage';   
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import NavBar from '../../components/NavBar/NavBar'
 import {getUser} from '../../utilities/users-service'
 import './App.css';
+import CreateJournalPage from '../CreateJournalPage/CreateJournalPage';
+import SavedJournalPage from '../SavedJournalPage/SavedJournalPage';
 
 
 export default function App() {
@@ -21,8 +21,8 @@ export default function App() {
         <NavBar user= {user} setUser={setUser}/>
         <Routes>
           {/* Routes components in here */}
-          <Route path="/orders/new" element={<NewOrderPage />} />
-          <Route path="/orders" element={<OrderHistoryPage />} />
+          <Route path="/journal/new" element={<CreateJournalPage />} />
+          <Route path="/journal/:journalSaved" element={<SavedJournalPage />} />
 
         </Routes>
         </>
