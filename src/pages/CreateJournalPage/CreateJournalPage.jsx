@@ -1,36 +1,38 @@
 import { useState, useEffect } from "react";
+import ScriptureDisplay from '../ScriptureDisplay/ScriptureDisplay';
 
-
-
-export default function CreateJournalPage({newEntry}) {
+export default function CreateJournalPage({}) {
     
   const [form, setForm] = useState ({
     mood: "",
     textField: ""
-
-
+    // saveJournal: ""
 });
-  console.log(form)
+//   console.log(form)
   const [saveJournal, setSaveJournal]= useState(false)
-
-  
-  const handleCheckboxChange = () => {
-    setSaveJournal(!saveJournal);
-  };
 
   const handleNewEntry = (evt) => {
     evt.preventDfault();
     if (saveJournal) {
  }}
 
-
-  const handleChange = (evt) => {
+ const handleChange = (evt) => {
     const newFormData = {
         ...form , [evt.target.name]: evt.target.value
     }
     setForm(newFormData)
 }
 
+//create a function for the button and tell it to 
+//if clicked go to ScripturDisplaypage
+const [showScripturePage, setShowScripturePage] = useState(false);
+
+const handleSubmitButton = (evt) => {
+setShowScripturePage(evt.target)
+    setShowScripturePage(true);
+    
+    
+}
  
   return (
     <>
@@ -59,35 +61,24 @@ export default function CreateJournalPage({newEntry}) {
         </label>
         {/* <label>
             Would you like to save this:
-            <input type="checkbox" name="saveJournal" />
+            <input
+            type="checkbox" 
+            name="saveJournal" 
+            />
         </label> */}
+        
+        {showScripturePage ? (
+            <ScriptureDisplay />
 
-        <button>Lets get your scripture of the day</button>
+        ) : (
+            
+            <button onClick={handleSubmitButton}>
+            Click here
+            </button>
+        
+        )}
+        
 </form>
     </>
   );
-
-  
-
-  
-    
-
-    
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }

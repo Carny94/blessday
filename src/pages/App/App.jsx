@@ -6,6 +6,7 @@ import {getUser} from '../../utilities/users-service'
 import './App.css';
 import CreateJournalPage from '../CreateJournalPage/CreateJournalPage';
 import SavedJournalPage from '../SavedJournalPage/SavedJournalPage';
+import ScriptureDisplay from '../ScriptureDisplay/ScriptureDisplay';
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           {/* Routes components in here */}
           <Route path="/journal/new" element={<CreateJournalPage />} />
           <Route path="/journal/:journalSaved" element={<SavedJournalPage />} />
+          <Route path="/scripture" element={<ScriptureDisplay />} />
 
         </Routes>
         </>
