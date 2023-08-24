@@ -20,7 +20,8 @@ const express = require('express');
  app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
  app.use(express.static(path.join(__dirname, 'build')));
  app.use(require('./config/checkToken'));
- app.use('/api/users', require('./routes/api/users'));
+
+
 
  //middleware to verify token and assign usern objects
  //be sure to mount routes
@@ -30,6 +31,7 @@ const express = require('express');
  
 // put API routes here, before the "catch all" routes
 app.use('/api/users', require('./routes/api/users'));
+//  app.use('/api/journal', require('./routes/api/journal'));
 
 //protect all routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');

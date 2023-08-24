@@ -1,0 +1,19 @@
+form completed
+next step : connect to API in my frontend utilities but will code it ib my from my handle submit 
+Handle submit connects to the API
+create request in the utilities api to the back in
+
+
+
+Req come from component (creatForm) -> Call to utilities API (journal-api) , -> The actual request get maid inside of send request (leave frontend)
+-> server.js is the entry to the backend -- > Routes folder (handles the endpath) --> Controllers handle the request --> request to Models . 
+controller handles the request and sends a response . Now the response goes to the frontend. 
+
+send request -> JournalsAPI -> createjournal 
+
+
+
+Resources:
+https://reactrouter.com/en/main/hooks/use-navigate - useNAVIGATE()  <- use this to navigate to new page
+
+

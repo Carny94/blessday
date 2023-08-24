@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import ScriptureDisplay from '../ScriptureDisplay/ScriptureDisplay';
+import * as submitFormAPI from '../../utilities/create-journal'
+
 
 export default function CreateJournalPage({}) {
     
@@ -8,13 +10,29 @@ export default function CreateJournalPage({}) {
     textField: ""
     // saveJournal: ""
 });
-//   console.log(form)
-  const [saveJournal, setSaveJournal]= useState(false)
 
-  const handleNewEntry = (evt) => {
-    evt.preventDfault();
-    if (saveJournal) {
- }}
+
+//-------CALL OF API-----///
+
+async function createForm(e){
+    e.preventDefault()
+    const data = await submitFormAPI.createForm({form}) 
+    console.log(data)
+    setForm({...form, form: data.handleNewEntry})
+}
+//update the state of form when saved
+
+
+//update state
+async function updateForm() {
+    const updatedData = await submitFormAPI.updateForm({ form });
+    setForm(updatedData); 
+  }
+
+
+//------------------------Event Handleres------------------------------//
+
+
 
  const handleChange = (evt) => {
     const newFormData = {
@@ -22,23 +40,12 @@ export default function CreateJournalPage({}) {
     }
     setForm(newFormData)
 }
-
-//create a function for the button and tell it to 
-//if clicked go to ScripturDisplaypage
-const [showScripturePage, setShowScripturePage] = useState(false);
-
-const handleSubmitButton = (evt) => {
-setShowScripturePage(evt.target)
-    setShowScripturePage(true);
-    
-    
-}
  
-  return (
-    <>
-    <h2>How is your day</h2>
+    return (
+     <>
+         <h2>How is your day</h2>
 
-    <form onSubmit={handleNewEntry}>
+     <form onSubmit={createForm}>
         <label>
             How is your day:
             <input 
@@ -58,27 +65,18 @@ setShowScripturePage(evt.target)
             onChange={handleChange}
             value={form.textField}
             />
-        </label>
-        {/* <label>
+        </label> 
+         <label>
             Would you like to save this:
             <input
             type="checkbox" 
             name="saveJournal" 
             />
-        </label> */}
-        
-        {showScripturePage ? (
-            <ScriptureDisplay />
-
-        ) : (
-            
-            <button onClick={handleSubmitButton}>
+        </label> 
+            <button type="submit">
             Click here
-            </button>
-        
-        )}
-        
+            </button>       
 </form>
     </>
-  );
-    }
+  ); 
+        }
