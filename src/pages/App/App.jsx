@@ -13,7 +13,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   //initialize user to null
   
-
+  const [journal, setJournal] = useState(null);
 
   return (
     <main className="App">
@@ -22,9 +22,11 @@ export default function App() {
         <NavBar user= {user} setUser={setUser}/>
         <Routes>
           {/* Routes components in here */}
-          <Route path="/journal/new" element={<CreateJournalPage />} />
+          
+          <Route path="/journal/new" element={<CreateJournalPage setJournal={setJournal} />} />
           <Route path="/journal/:journalSaved" element={<SavedJournalPage />} />
           <Route path="/scripture" element={<ScriptureDisplay />} />
+
 
         </Routes>
         </>

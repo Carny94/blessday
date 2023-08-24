@@ -9,7 +9,9 @@ Req come from component (creatForm) -> Call to utilities API (journal-api) , -> 
 -> server.js is the entry to the backend -- > Routes folder (handles the endpath) --> Controllers handle the request --> request to Models . 
 controller handles the request and sends a response . Now the response goes to the frontend. 
 
-send request -> JournalsAPI -> createjournal 
+send request -> JournalsAPI -> createjournal
+
+routes/api - routes come from utilities api
 
 
 

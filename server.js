@@ -31,7 +31,7 @@ const express = require('express');
  
 // put API routes here, before the "catch all" routes
 app.use('/api/users', require('./routes/api/users'));
-//  app.use('/api/journal', require('./routes/api/journal'));
+app.use('/api/journal', require('./routes/api/journal'));
 
 //protect all routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');

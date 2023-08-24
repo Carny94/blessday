@@ -12,8 +12,8 @@ const journalEntrySchema = new Schema({
         required: true
     },
     saveJournal: {
-        type: Boolean,
-        required: true
+        type: Boolean
+        
     }
 }, {
     timestamps: true // Place the timestamps option here
