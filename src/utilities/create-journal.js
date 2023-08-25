@@ -19,6 +19,6 @@ export function updateForm(form) {
     return sendRequest(`${BASE_URL}/update`, 'POST', form);
 }
 
-export function deleteForm(form) {
-    return sendRequest(`${BASE_URL}/delete`, 'DELETE', form);
+export function deleteForm(id) {
+    return sendRequest(`${BASE_URL}/delete`, 'DELETE', id);
 }

@@ -8,10 +8,10 @@ const createCTRL = require('../../controllers/api/createjournal');
 
 // GET / JOURNAL
 
-// router.get('/', createCTRL.new);
-
-
 router.post('/create', createCTRL.newEntry);
+
+// DELETE / JOURNAL (delte is a reserved word in JS)
+router.delete('/delete', createCTRL.deleteEntry);
 
 
 

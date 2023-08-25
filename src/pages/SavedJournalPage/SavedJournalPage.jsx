@@ -1,16 +1,18 @@
-import * as userService from '../../utilities/users-service';
-import { checkToken } from '../../utilities/users-service'
+import CreateJournalForm from '../../components/CreateJournalForm/CreateJournalForm'
 
 
-export default function SavedJournalPage() {
-    async function handleCheckToken() {
-       const expDate = await checkToken();
-       console.log(expDate);
-    }
+export default function SavedJournalPage({ setJournal }) {
+   
     return (
-        <>
-        <h1>Saved Journal</h1>
-        <button onClick={handleCheckToken}>Check When User</button>
-        </>
+        
+        < CreateJournalForm 
+        setJournal={ setJournal }
+       
+
+
+        />
+      
+
     )
-}
+   
+};

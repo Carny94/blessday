@@ -1,10 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import ScriptureDisplay from '../ScriptureDisplay/ScriptureDisplay';
+import ScriptureDisplay from '../../pages/ScriptureDisplay/ScriptureDisplay';
 import * as submitFormAPI from '../../utilities/create-journal'
 
 
-export default function CreateJournalPage({}) {
-    
+export default function CreateJournalForm({ setJournal }) {
+  
+
   const [form, setForm] = useState ({
     mood: "",
     textField: ""
@@ -18,16 +20,27 @@ async function createForm(e){
     e.preventDefault()
     const data = await submitFormAPI.createForm({form}) 
     console.log(data)
-    setForm({...form, form: data.handleNewEntry})
-}
-//update the state of form when saved
-
-
-//update state
-async function updateForm() {
-    const updatedData = await submitFormAPI.updateForm({ form });
-    setForm(updatedData); 
+    setJournal(data)
   }
+
+  async function deleteForm(e) {
+    e.preventDefault()
+    const removeData = await submitFormAPI.deleteForm({form})
+    // setJournal or setForm
+    setJournal ({
+        mood:"",
+        textField:""
+    });
+}
+  async function updateForm(e) {
+    
+  }
+
+// async function updateForm() {
+//     const updatedData = await submitFormAPI.updateForm({ form });
+//     setForm(updatedData); 
+    
+//   }
 
 
 //------------------------Event Handleres------------------------------//
@@ -73,9 +86,10 @@ async function updateForm() {
             name="saveJournal" 
             />
         </label> 
-            <button type="submit">
-            Click here
-            </button>       
+            <button type="submit"> Click here </button>    
+            <button 
+            onClick={deleteForm}>Delete
+            </button>   
 </form>
     </>
   ); 
