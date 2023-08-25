@@ -1,18 +1,12 @@
 import CreateJournalForm from '../../components/CreateJournalForm/CreateJournalForm'
 
 
-export default function SavedJournalPage({ setJournal }) {
+export default function SavedJournalPage({ journal }) {
    
-    return (
+    
+return (
         
-        < CreateJournalForm 
-        setJournal={ setJournal }
+        <h1>mood: = {journal.mood} </h1>
        
-
-
-        />
-      
-
-    )
-   
-};
+      )
+   };

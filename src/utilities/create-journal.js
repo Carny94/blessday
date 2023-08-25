@@ -15,8 +15,8 @@ export function saveForm(form) {
     return sendRequest(`${BASE_URL}/save`, 'POST', form);
 }
 
-export function updateForm(form) {
-    return sendRequest(`${BASE_URL}/update`, 'POST', form);
+export function updateForm(id) {
+    return sendRequest(`${BASE_URL}/update`, 'Put', id);
 }
 
 export function deleteForm(id) {

@@ -2,7 +2,8 @@ const Journal = require('../../models/createjournal')
 
 module.exports = {
      newEntry,
-     deleteEntry
+     deleteEntry,
+     updateEntry
 };
 
 // create a async function for when  a user create a journal
@@ -19,7 +20,12 @@ async function deleteEntry (req,res) {
     const formId = req.params.id;
     const deleteForm = await Journal.findByIdAndDelete(formId)
     return res.json(deleteForm);
+}
 
+async function updateEntry (req,res) {
+    const updateFormId = req.params.id;
+    const updateEntry = await Journal.findByIdAndUpdate(updateFormId);
+    return res.json(updateEntry);
 }
 
 

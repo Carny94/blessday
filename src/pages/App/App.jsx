@@ -23,8 +23,8 @@ console.log(journal)
         <Routes>
           {/* Routes components in here */}
           
-          {/* <Route path="/journal/new" element={<CreateJournalForm setJournal={setJournal} />} /> */}
-          <Route path="/journal/:journalSaved" element={<SavedJournalPage setJournal={setJournal}/>} />
+          <Route path="/journal/new" element={<CreateJournalForm setJournal={setJournal} />} />
+          <Route path="/journal/journalSaved" element={<SavedJournalPage journal={journal}/>} />
           <Route path="/scripture" element={<ScriptureDisplay />} />
 
 

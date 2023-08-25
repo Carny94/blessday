@@ -15,7 +15,7 @@ routes/api - routes come from utilities api
 
 prop drilling - needed to pass props to components several layers deep
 
-
+useEffect for - savedjournals
 
 Resources:
 https://reactrouter.com/en/main/hooks/use-navigate - useNAVIGATE()  <- use this to navigate to new page

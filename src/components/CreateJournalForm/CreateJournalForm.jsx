@@ -4,9 +4,9 @@ import ScriptureDisplay from '../../pages/ScriptureDisplay/ScriptureDisplay';
 import * as submitFormAPI from '../../utilities/create-journal'
 
 
-export default function CreateJournalForm({ setJournal }) {
-  
-
+export default function CreateJournalForm({ Journal, setJournal }) {
+//   const [isSaved, setIsSaved] = useState(false)
+  const navigate = useNavigate();
   const [form, setForm] = useState ({
     mood: "",
     textField: ""
@@ -21,6 +21,7 @@ async function createForm(e){
     const data = await submitFormAPI.createForm({form}) 
     console.log(data)
     setJournal(data)
+    navigate("/journal/journalSaved");
   }
 
   async function deleteForm(e) {
@@ -32,15 +33,24 @@ async function createForm(e){
         textField:""
     });
 }
+
   async function updateForm(e) {
-    
+    const {name, value} = e.target;
+    e.preventDefault()
+    const updatedData = await submitFormAPI.updateForm({ form });
+    setJournal({
+        ...Journal, 
+        [name]: value,
+    });
   }
 
-// async function updateForm() {
-//     const updatedData = await submitFormAPI.updateForm({ form });
-//     setForm(updatedData); 
-    
-//   }
+  useEffect(() => {
+
+
+  })
+
+  
+  
 
 
 //------------------------Event Handleres------------------------------//
@@ -87,9 +97,8 @@ async function createForm(e){
             />
         </label> 
             <button type="submit"> Click here </button>    
-            <button 
-            onClick={deleteForm}>Delete
-            </button>   
+            <button onClick={deleteForm}>Delete</button>   
+            <button onClick={updateForm}>Edit</button>
 </form>
     </>
   ); 
