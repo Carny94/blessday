@@ -1,4 +1,5 @@
 // routes/api Handle the endpath for the api/journal
+// all routes in api file /api/journal
 const express = require('express');
 const router = express.Router();
 
@@ -14,5 +15,7 @@ router.post('/create', createCTRL.newEntry);
 router.delete('/delete', createCTRL.deleteEntry);
 
 router.put('/update', createCTRL.updateEntry);
+
+router.get('/', createCTRL.getAll);
 
 module.exports = router;

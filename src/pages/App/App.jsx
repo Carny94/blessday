@@ -24,7 +24,7 @@ console.log(journal)
           {/* Routes components in here */}
           
           <Route path="/journal/new" element={<CreateJournalForm setJournal={setJournal} />} />
-          <Route path="/journal/journalSaved" element={<SavedJournalPage journal={journal}/>} />
+          <Route path="/journal/journalSaved" element={<SavedJournalPage journal={journal} setJournal={setJournal}/>} />
           <Route path="/scripture" element={<ScriptureDisplay />} />
 
 

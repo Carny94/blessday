@@ -3,7 +3,8 @@ const Journal = require('../../models/createjournal')
 module.exports = {
      newEntry,
      deleteEntry,
-     updateEntry
+     updateEntry,
+     getAll
 };
 
 // create a async function for when  a user create a journal
@@ -28,7 +29,13 @@ async function updateEntry (req,res) {
     return res.json(updateEntry);
 }
 
+async function getAll (req,res) {
+    // request ({journal})body from SavedJournalPage
+    const journals = await Journal.find({});
+    return res.json(journals)
 
+
+}
 
 
 //update function

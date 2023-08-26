@@ -5,7 +5,8 @@ import * as submitFormAPI from '../../utilities/create-journal'
 
 
 export default function CreateJournalForm({ Journal, setJournal }) {
-//   const [isSaved, setIsSaved] = useState(false)
+  //if i want to set the state of check box so i need to state it here
+
   const navigate = useNavigate();
   const [form, setForm] = useState ({
     mood: "",
@@ -20,9 +21,9 @@ async function createForm(e){
     e.preventDefault()
     const data = await submitFormAPI.createForm({form}) 
     console.log(data)
-    setJournal(data)
     navigate("/journal/journalSaved");
   }
+
 
   async function deleteForm(e) {
     e.preventDefault()
@@ -94,6 +95,7 @@ async function createForm(e){
             <input
             type="checkbox" 
             name="saveJournal" 
+            // onChange={saveForm}
             />
         </label> 
             <button type="submit"> Click here </button>    
