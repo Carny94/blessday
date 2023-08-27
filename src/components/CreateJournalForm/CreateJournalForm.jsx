@@ -10,8 +10,8 @@ export default function CreateJournalForm({ Journal, setJournal }) {
   const navigate = useNavigate();
   const [form, setForm] = useState ({
     mood: "",
-    textField: ""
-    // saveJournal: ""
+    textField: "",
+    saveJournal: false
 });
 
 
@@ -19,19 +19,31 @@ export default function CreateJournalForm({ Journal, setJournal }) {
 
 async function createForm(e){
     e.preventDefault()
+    const isSaveJournalChecked = e.target.saveJournal.checked;
+    if (isSaveJournalChecked) { 
+
     const data = await submitFormAPI.createForm({form}) 
     console.log(data)
     navigate("/journal/journalSaved");
+  } else {
+    alert("Please check the saveJournal box if you want to save your entry")
   }
+ // Next step -> extend function to conditionally navigate to scripture page
+
+}
 
 //------------------------Event Handleres------------------------------//
 
 
 
- const handleChange = (evt) => {
+ const handleChange = (e) => {
     const newFormData = {
-        ...form , [evt.target.name]: evt.target.value
+        ...form , [e.target.name]: e.target.value
     }
+
+if (e.target.type === "checkbox") {
+    newFormData.saveJournal = e.target.checked;
+}
     setForm(newFormData)
 }
  
@@ -65,10 +77,8 @@ async function createForm(e){
             <input
             type="checkbox" 
             name="saveJournal" 
-            onChange
-            value
-
-            // onChange={saveForm}
+            checked= {form.saveJournal}
+            onChange={handleChange}
             />
         </label> 
             <button type="submit"> Click here </button>    
