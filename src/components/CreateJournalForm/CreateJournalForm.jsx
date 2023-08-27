@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ScriptureDisplay from '../../pages/ScriptureDisplay/ScriptureDisplay';
 import * as submitFormAPI from '../../utilities/create-journal'
 
+const moodOptions = ["Happy😁", "Sad😔", "Excited😆", "Calm😊", "Angry😒", "Confused🤯"];
 
 export default function CreateJournalForm({ Journal, setJournal }) {
   //if i want to set the state of check box so i need to state it here
@@ -52,17 +53,22 @@ if (e.target.type === "checkbox") {
          <h2>How is your day</h2>
 
      <form onSubmit={createForm}>
-        <label>
-            How is your day:
-            <input 
-            type="text" 
-            name="mood" 
-            placeholder="hmm"
-            onChange={handleChange}
-            value={form.mood}
-            />
-        </label>
-        <label>
+     <label>
+  How is your mood:
+  <select
+    name="mood"
+    value={form.mood}
+    onChange={handleChange}
+  >
+    <option value="">Select a Mood</option> {/* Add an empty option for default */}
+    {moodOptions.map((mood, index) => (
+      <option key={index} value={mood}>
+        {mood}
+      </option>
+    ))}
+  </select>
+</label>
+              <label>
             Talk about it:
             <input 
             type="text" 

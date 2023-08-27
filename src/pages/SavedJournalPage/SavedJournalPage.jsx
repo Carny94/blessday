@@ -33,7 +33,6 @@ export default function SavedJournalPage({ setJournal, journal }) {
           <div key={index}>
             <p>Mood: {journal.mood}</p>
             <p>TextField: {journal.textField}</p>
-
 <button onClick= {() => (handleDelete(journal._id))}>delete</button>
 {/* <button onClick={handleUpdate}>Update</button> */}
           </div>
