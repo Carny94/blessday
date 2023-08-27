@@ -24,36 +24,6 @@ async function createForm(e){
     navigate("/journal/journalSaved");
   }
 
-
-  async function deleteForm(e) {
-    e.preventDefault()
-    const removeData = await submitFormAPI.deleteForm({form})
-    // setJournal or setForm
-    setJournal ({
-        mood:"",
-        textField:""
-    });
-}
-
-  async function updateForm(e) {
-    const {name, value} = e.target;
-    e.preventDefault()
-    const updatedData = await submitFormAPI.updateForm({ form });
-    setJournal({
-        ...Journal, 
-        [name]: value,
-    });
-  }
-
-  useEffect(() => {
-
-
-  })
-
-  
-  
-
-
 //------------------------Event Handleres------------------------------//
 
 
@@ -95,12 +65,15 @@ async function createForm(e){
             <input
             type="checkbox" 
             name="saveJournal" 
+            onChange
+            value
+
             // onChange={saveForm}
             />
         </label> 
             <button type="submit"> Click here </button>    
-            <button onClick={deleteForm}>Delete</button>   
-            <button onClick={updateForm}>Edit</button>
+            
+            
 </form>
     </>
   ); 

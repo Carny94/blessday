@@ -13,7 +13,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   //initialize user to null
   
-  const [journal, setJournal] = useState(null);
+  const [journal, setJournal] = useState([]);
 console.log(journal)
   return (
     <main className="App">

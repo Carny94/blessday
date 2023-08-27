@@ -12,16 +12,34 @@ export default function SavedJournalPage({ setJournal, journal }) {
         }
         getJournals();
     },[])
-
+   
     
-    
-  
+    async function handleDelete(id) {
 
-    
+         await journalAPI.deleteForm({id})
+         setJournal(journal.filter(entry => entry._id !== id));
+        }
 
-    return (
-        <h1>hi</h1>
-        // <h1>mood: = {journal.mood} </h1>
+
+    // async function handleUpdate(id, updatedData) {
+    //     await journalAPI.updateForm({id, updatedData})
+    // }
+
+
+ return (
        
-    )
+        <div>
+        {journal.map((journal, index) => (
+          <div key={index}>
+            <p>Mood: {journal.mood}</p>
+            <p>TextField: {journal.textField}</p>
+
+<button onClick= {() => (handleDelete(journal._id))}>delete</button>
+{/* <button onClick={handleUpdate}>Update</button> */}
+          </div>
+        ))}
+      </div>
+    );
+
+    
 };

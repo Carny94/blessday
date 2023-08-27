@@ -18,15 +18,20 @@ async function newEntry (req,res) {
 }
 
 async function deleteEntry (req,res) {
-    const formId = req.params.id;
-    const deleteForm = await Journal.findByIdAndDelete(formId)
-    return res.json(deleteForm);
+    const journalId = req.body.id;
+    const deletedJournal = await Journal.findByIdAndDelete(journalId)
+    return res.json(deletedJournal);
 }
-
+// have to send id a nd new journal that im going to place
 async function updateEntry (req,res) {
-    const updateFormId = req.params.id;
-    const updateEntry = await Journal.findByIdAndUpdate(updateFormId);
-    return res.json(updateEntry);
+    const updateJournalId = req.params.id;
+    const updatedData = req.body;
+    const updatedJournal = await Journal.findByIdAndUpdate(
+        updateJournalId,
+        updatedData,
+        { new: true }
+        );
+    return res.json(updatedJournal);
 }
 
 async function getAll (req,res) {
