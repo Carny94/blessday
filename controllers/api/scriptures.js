@@ -5,7 +5,11 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const scriptures = await Journal.find({});
-    return res.json(scriptures)
-
+    try {
+        const scriptures = await Journal.find({});
+        return res.json(scriptures);
+    } catch (error) {
+        console.error('Error fetching scriptures:', error);
+        return res.status(500).json({ error: 'Internal Server Error' });
+    }
 }

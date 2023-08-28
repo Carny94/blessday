@@ -25,7 +25,7 @@ async function createForm(e){
 
     const data = await submitFormAPI.createForm({form}) 
     console.log(data)
-    navigate("/journal/journalSaved");
+    navigate("/scripture");
   } else {
     alert("Please check the saveJournal box if you want to save your entry")
   }

@@ -4,9 +4,15 @@ const Schema = mongoose.Schema;
 //The moedl Schema will then be passed to your controllers
 
 const scriptureSchema = new Schema ({
-    scripture: {
+    book: {
         type: String
     },
+    verse: {
+        type: Number
+    },
+    read: {
+        type: String
+    }
 });
 
 
