@@ -1,8 +1,9 @@
-import CreateJournalForm from '../../components/CreateJournalForm/CreateJournalForm'
 import { useEffect, useState } from 'react';
 import * as journalAPI from '../../utilities/create-journal'
 import EditJournalForm from '../../components/EditJournalForm/EditJournalForm';
-import { useNavigate } from 'react-router-dom';
+
+
+
 export default function SavedJournalPage({ setJournal, journal }) {
 
   const [editClicked, setEditClicked] = useState(false)
@@ -25,13 +26,11 @@ export default function SavedJournalPage({ setJournal, journal }) {
   }
 
 
-  async function handleUpdate(id, updatedData) {
-    await journalAPI.updateForm({ id, updatedData })
-
-  }
+ 
 
   async function handleEdit() {
     setEditClicked(!editClicked)
+  
   }
 
 
@@ -45,7 +44,7 @@ export default function SavedJournalPage({ setJournal, journal }) {
             <p>Posted on: {new Date(journal.createdAt).toLocaleString()}</p>
             <button onClick={() => handleDelete(journal._id)}>Delete</button>
             <button onClick={handleEdit}>{ editClicked ? 'Hide Edit' : 'Edit' }</button>
-            { editClicked  &&  <EditJournalForm /> }
+            { editClicked  &&  <EditJournalForm journalId={journal._id} setJournal={ setJournal }/> }
             
           </div>
        ))}

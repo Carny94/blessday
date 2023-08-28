@@ -14,7 +14,7 @@ router.post('/create', createCTRL.newEntry);
 // DELETE / JOURNAL (delte is a reserved word in JS)
 router.delete('/delete', createCTRL.deleteEntry);
 
-router.put('/update/:id', createCTRL.updateEntry);
+router.put('/update', createCTRL.updateEntry);
 
 router.get('/', createCTRL.getAll);
 

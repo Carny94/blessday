@@ -23,12 +23,16 @@ async function deleteEntry (req,res) {
     return res.json(deletedJournal);
 }
 // have to send id a nd new journal that im going to place
+
+//Model.findByIdAndUpdate(id, { name: 'jason bourne' }, options)
+
 async function updateEntry (req,res) {
-    const updateJournalId = req.params.id;
-    const updatedData = req.body;
+    const updateJournalId = req.body.id;
+    const updatedData = req.body.textField;
+    console.log(updatedData)
     const updatedJournal = await Journal.findByIdAndUpdate(
         updateJournalId,
-        updatedData,
+        {textField: updatedData},
         { new: true }
         );
     return res.json(updatedJournal);

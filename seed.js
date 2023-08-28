@@ -4,7 +4,7 @@ require('./config/database');
 const Journal = require('./models/createjournal');
 
 (async function () {
-    const journal = await Journal.create([
+    const journal = await scripture.create([
         
         { book: 'John', verse: '16:33', read: 'In the world you will have tribulation. But take heart; I have overcome the world.' },
         { book: 'Isaiah', verse: '41:10', read:  ' "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand."'},
