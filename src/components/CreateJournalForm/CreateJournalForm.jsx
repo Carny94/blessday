@@ -60,7 +60,7 @@ if (e.target.type === "checkbox") {
     value={form.mood}
     onChange={handleChange}
   >
-    <option value="">Select a Mood</option> {/* Add an empty option for default */}
+    <option value="">Select a Mood</option> 
     {moodOptions.map((mood, index) => (
       <option key={index} value={mood}>
         {mood}
@@ -69,7 +69,7 @@ if (e.target.type === "checkbox") {
   </select>
 </label>
               <label>
-            Talk about it:
+            Talk about how your feelings Today
             <input 
             type="text" 
             name="textField" 

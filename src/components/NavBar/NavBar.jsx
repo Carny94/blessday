@@ -12,7 +12,7 @@ export default function NavBar({user, setUser}) {
         <nav>
             <Link to= "/journal/new" >How Are You Feeling</Link>
             &nbsp; | &nbsp;
-            <Link to= "/journal/journalSaved">Your Saved Journal</Link>
+            <Link to= "/journal/journalSaved">Saved Entrys</Link>
             &nbsp;&nbsp;
             {/* delete scriptur link. for viewing purose only */}
             {/* <Link to="/scripture">scripture</Link> */}

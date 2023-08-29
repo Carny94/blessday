@@ -1,4 +1,5 @@
 import * as scripturesAPI from '../../utilities/scriptures-api';
+import * as userService from '../../utilities/users-service';
 
 
 
@@ -7,6 +8,10 @@ export default function ScriptureDisplay() {
   function getRandomIndex(max) {
     return Math.floor(Math.random() * max);
   }
+
+
+
+
 
   const scriptures = [
     {
