@@ -28,9 +28,9 @@ Join us on this journey to brighter days.
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" alt="Express" title="Express"/></code>
 </div>
 
-Link to Wireframe👉🏾 https://www.figma.com/file/AC9f1mYbhKBwIoeNBSToe3/Untitled?type=design&node-id=1-55&mode=design&t=R6sZrY35oBK24giz-0
-Link to TrelloBoard👉🏾 https://trello.com/b/b5EejWMM/project-4
-Link to ERD👉🏾 https://whimsical.com/project-four-YJZxJYb5PbGhemdTjkHXMZ
+<li>Link to Wireframe👉🏾 https://www.figma.com/file/AC9f1mYbhKBwIoeNBSToe3/Untitled?type=design&node-id=1-55&mode=design&t=R6sZrY35oBK24giz-0</li>
+<li>Link to TrelloBoard👉🏾 https://trello.com/b/b5EejWMM/project-4</li>
+<li>Link to ERD👉🏾 https://whimsical.com/project-four-YJZxJYb5PbGhemdTjkHXMZ</li>
 
 <h1>Future Features:</h1>
 <li>Add A Questionaire when you login</li>
