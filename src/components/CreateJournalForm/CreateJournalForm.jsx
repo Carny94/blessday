@@ -29,7 +29,7 @@ async function createForm(e){
   } else {
     alert("Please check the saveJournal box if you want to save your entry")
   }
- // Next step -> extend function to conditionally navigate to scripture page
+
 
 }
 

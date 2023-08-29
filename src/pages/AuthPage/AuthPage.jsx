@@ -12,8 +12,9 @@ export default function AuthPage({setUser}) {
   }
 
   return (
+  
     <>
-      
+      <h1>BLESSDAY</h1>
       <button onClick={handleClick}>{isNewUser ? ' New Account ' : 'Login'}</button>
       { isNewUser ?
       <>
