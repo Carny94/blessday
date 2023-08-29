@@ -1,3 +1,5 @@
+<h1>BLESSDAY</h1>
+
 ![alt text](https://www.littleflower.org/wp-content/uploads/2021/02/tile-image-scripture.jpg) 
 
 
@@ -27,23 +29,6 @@ Join us on this journey to brighter days.
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" alt="npm" title="npm"/></code>
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" alt="Express" title="Express"/></code>
 </div>
-
-❤️<h1><h1>Favorite Code🥶</h1></h1> ❤️
-
-async function createForm(e){
-    e.preventDefault()
-    const isSaveJournalChecked = e.target.saveJournal.checked;
-    if (isSaveJournalChecked) { 
-
-    const data = await submitFormAPI.createForm({form}) 
-    console.log(data)
-    navigate("/scripture");
-  } else {
-    alert("Please check the saveJournal box if you want to save your entry")
-  }
-
-
-}
 
 
 
