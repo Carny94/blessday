@@ -35,6 +35,9 @@ console.log(journal)
       }
     </main>
   );
+
+
+
 }
 
 

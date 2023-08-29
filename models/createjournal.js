@@ -20,7 +20,7 @@ const scriptureSchema = new Schema ({
 const journalEntrySchema = new Schema({
     mood: {
         type: String,
-        required: true
+        required: false
     },
     textField: {
         type: String,
