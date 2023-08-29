@@ -1,4 +1,6 @@
 ![alt text](https://www.littleflower.org/wp-content/uploads/2021/02/tile-image-scripture.jpg) 
+
+
 <h1>Description:</h1>
 In those moments when life throws us curveballs, and it feels like no one has the time to listen, BlessDay is here for you. Our app provides a safe space for you to express your emotions and, more importantly, it's a source of instant motivation tailored just for you. 
 
@@ -9,10 +11,12 @@ Join us on this journey to brighter days.
 "because everyone deserves a little motivation, even on their toughest days." - BlessDay
 
 <h2>Current Features</h2>
-User-Friendly Interface
-Emotion Tracking
-Privacy and Anonymity
-Motivational Content
+<ul>
+<li>User-Friendly Interface</li>
+<li>Emotion Tracking</li>
+<li>Privacy and Anonymity</li>
+<li>Motivational Content</li>
+<ul>
 
 <h1>Technologies Used: </h1>
 <div align="center">
@@ -23,6 +27,16 @@ Motivational Content
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" alt="npm" title="npm"/></code>
 	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" alt="Express" title="Express"/></code>
 </div>
+
+Link to Wireframe👉🏾 https://www.figma.com/file/AC9f1mYbhKBwIoeNBSToe3/Untitled?type=design&node-id=1-55&mode=design&t=R6sZrY35oBK24giz-0
+Link to TrelloBoard👉🏾 https://trello.com/b/b5EejWMM/project-4
+Link to ERD👉🏾 https://whimsical.com/project-four-YJZxJYb5PbGhemdTjkHXMZ
+
+<h1>Future Features:</h1>
+<li>Add A Questionaire when you login</li>
+<li>Add A Search Bar For Scriptures (using a API)</li>
+<li>Users can uploads photos</li>
+
 
 
 
