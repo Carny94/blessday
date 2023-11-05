@@ -10,6 +10,8 @@ export default function NavBar({user, setUser}) {
     }
     return (
         <nav>
+            <Link to= "/">Home</Link>
+            &nbsp; | &nbsp;
             <Link to= "/journal/new" >How Are You Feeling</Link>
             &nbsp; | &nbsp;
             <Link to= "/journal/journalSaved">Saved Entrys</Link>

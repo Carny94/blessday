@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as journalAPI from '../../utilities/create-journal'
 
 
@@ -8,6 +8,10 @@ export default function EditJournalForm({ journalId, setJournal }) {
    
     const [form, setForm] = useState({ textField: ""});
 
+
+    //----------CALL OF API ------------//
+
+   
 
     //------------------------Event Handleres------------------------------//
 

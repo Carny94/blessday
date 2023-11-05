@@ -33,6 +33,8 @@ const express = require('express');
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/journal', require('./routes/api/journal'));
 app.use('/api/scriptures', require('./routes/api/scriptures'));
+app.use('/api/quotes', require('./routes/api/quotes'));
+
 
 //protect all routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
