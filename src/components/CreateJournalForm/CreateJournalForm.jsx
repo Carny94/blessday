@@ -14,18 +14,28 @@ export default function CreateJournalForm({ Journal, setJournal }) {
     saveJournal: false,
   });
 
+  const [isLoading, setIsLoading] = useState(false);
 
 
   //-------CALL OF API-----//
+  
   async function createForm(e) {
     e.preventDefault();
     const saveJournalBox = e.target.saveJournal.checked;
     if (saveJournalBox) {
+      setIsLoading(true);
+try { 
       const data = await submitFormAPI.createForm({ form });
       console.log(data);
-      navigate("/scripture");
+      setTimeout(() => {
+         navigate("/scripture");
+        }, 3000); // Adjust the delay time as needed
+      } catch (error) {
+        console.error(error);
+        setIsLoading(false); 
+      }
     } else {
-      alert("Please check the saveJournal box if you want to save your entry");
+      navigate("/scripture")
     }
   }
 
@@ -46,6 +56,7 @@ export default function CreateJournalForm({ Journal, setJournal }) {
   
   return (
     <>
+
       <h2>How is your day</h2>
       <form onSubmit={createForm} className="journal-form">
         <label className="form-label">
@@ -83,6 +94,8 @@ export default function CreateJournalForm({ Journal, setJournal }) {
         </label>
         <button type="submit" className="form-button">Click here for today scripture</button>
       </form>
+      {isLoading && <div className="loading">Generating your scripture. Please wait...</div>}
+
     </>
   );
 }
