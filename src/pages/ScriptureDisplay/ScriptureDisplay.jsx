@@ -18,14 +18,17 @@ const options = {
 //-------------------CALL of API
 
 async function getApi (e) {
+  // e.preventdefault();
 try {
 	const response = await fetch(url, options);
-  const result = await response.text();
   if (response.ok) {
-setCreateAPIScripture(result)
+    const data = await response.json();
+    const verse = awa
+    const text = data[0].t;
+    setCreateAPIScripture(text)
   }
   } catch (error) {
-	console.error(error);
+	  console.error(error);
   };
 };
 useEffect(()=> {
