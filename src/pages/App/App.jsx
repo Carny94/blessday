@@ -9,6 +9,7 @@ import SavedJournalPage from '../SavedJournalPage/SavedJournalPage';
 import ScriptureDisplay from '../ScriptureDisplay/ScriptureDisplay';
 import HomePage from '../HomePage/HomePage';
 
+
 export default function App() {
   const [user, setUser] = useState(getUser());
   //initialize user to null
