@@ -23,9 +23,7 @@ try {
 	const response = await fetch(url, options);
   if (response.ok) {
     const data = await response.json();
-    const verse = awa
-    const text = data[0].t;
-    setCreateAPIScripture(text)
+    setCreateAPIScripture(data[0]);
   }
   } catch (error) {
 	  console.error(error);
@@ -41,7 +39,14 @@ useEffect(()=> {
 return (
 <div>
 <h1>Random Scripture Quote</h1>
-{createAPIScripture && <p>{createAPIScripture}</p>}
+{createAPIScripture && (
+<div>
+<p>Book: {createAPIScripture.b}</p>
+<p>Chapter: {createAPIScripture.c}</p>
+<p>Verse: {createAPIScripture.v}</p>
+<p>Scripture: {createAPIScripture.t}</p>
+</div>
+)}
 <button onClick={getApi}>Get Another Scripture</button>
 </div>
 );
