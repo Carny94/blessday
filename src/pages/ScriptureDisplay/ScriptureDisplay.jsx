@@ -1,18 +1,14 @@
+import React, { useState, useEffect } from 'react';
+
 
 
 export default function ScriptureDisplay() {
 
-//---------------Declare variable
+  //---------------Declare variable
+const [createAPIScripture, setCreateAPIScripture] = useState('');
 
-const [createAPIScripture, setCreateAPIScripture] = useState(false)
-
-
-
-//-------------------CALL of API
-
-async function getApi (e) {
-e.preventDefault();
-const url = 'https://iq-bible.p.rapidapi.com/GetAudioNarration?bookId=02&chapterId=003&versionId=kjv';
+const apiKey = 'edaae89300mshbb2ddde45808382p178b2cjsn7b04de6cb9db'
+const url = 'https://iq-bible.p.rapidapi.com/GetRandomVerse?versionId=kjv&limitToBookId=20&limitToChapterId=1';
 const options = {
 	method: 'GET',
 	headers: {
@@ -21,19 +17,31 @@ const options = {
 	}
 };
 
+//-------------------CALL of API
+
+async function getApi (e) {
 try {
 	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
+  const result = await response.text();
+  if (response.ok) {
+setCreateAPIScripture(result)
+  }
+  } catch (error) {
 	console.error(error);
-}
+  };
+};
 
-}
+useEffect(()=> {
+  getApi()
+}, [])
+
 
 //-----------------------Event Liistener
-
 return (
-  <h1>hello</h1>
-)
+<div>
+<h1>Random Scripture Quote</h1>
+{createAPIScripture && <p>{createAPIScripture}</p>}
+<button onClick={getApi}>Get Another Quote</button>
+</div>
+);
 }
