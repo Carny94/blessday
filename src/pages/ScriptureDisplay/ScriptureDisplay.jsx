@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
-
 export default function ScriptureDisplay() {
 
   //---------------Declare variable
@@ -30,18 +28,18 @@ setCreateAPIScripture(result)
 	console.error(error);
   };
 };
-
 useEffect(()=> {
   getApi()
 }, [])
 
+//-----------------------Event Listener
 
-//-----------------------Event Liistener
+
 return (
 <div>
 <h1>Random Scripture Quote</h1>
 {createAPIScripture && <p>{createAPIScripture}</p>}
-<button onClick={getApi}>Get Another Quote</button>
+<button onClick={getApi}>Get Another Scripture</button>
 </div>
 );
 }
