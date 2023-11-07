@@ -12,16 +12,16 @@ export default function NavBar({user, setUser}) {
         <nav>
             <Link to= "/">Home</Link>
             &nbsp; | &nbsp;
-            <Link to= "/journal/new" >How Are You Feeling</Link>
+            <Link to= "/journal/new" >Write Your Thoughts</Link>
             &nbsp; | &nbsp;
-            <Link to= "/journal/journalSaved">Saved Entrys</Link>
+            <Link to= "/journal/journalSaved">Saved Entries</Link>
             &nbsp;&nbsp;
             {/* delete scriptur link. for viewing purose only */}
             {/* <Link to="/scripture">scripture</Link> */}
             &nbsp;&nbsp;
             <span>Hi Beautiful, {user.name} </span>
             &nbsp;&nbsp;
-            <Link to=""onClick={handleLogOut}>Have A Better Day</Link>
+            <Link to=""onClick={handleLogOut}>Logout</Link>
 
         </nav>
     );
