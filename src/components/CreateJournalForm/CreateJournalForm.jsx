@@ -29,7 +29,7 @@ try {
       console.log(data);
       setTimeout(() => {
          navigate("/scripture");
-        }, 3000); // Adjust the delay time as needed
+        }, 3000); 
       } catch (error) {
         console.error(error);
         setIsLoading(false); 
@@ -56,46 +56,44 @@ try {
   
   return (
     <>
+<h2>How's your day going?</h2>
+<form onSubmit={createForm} className="journal-form">
+  <label className="form-label">
+    <h4>SELECT YOUR MOOD:</h4>
+    <select name="mood" value={form.mood} onChange={handleChange} className="form-select">
+      <option value="">😁</option>
+      {moodOptions.map((mood, index) => (
+        <option key={index} value={mood}>
+          {mood}
+        </option>
+      ))}
+    </select>
+  </label>
+  <label className="form-label">
+    <h4>Share your thoughts and feelings for today:</h4>
+    <input
+      type="text"
+      name="textField"
+      placeholder="Express your feelings here"
+      onChange={handleChange}
+      value={form.textField}
+      className="form-input"
+    />
+  </label>
+  <label className="form-label">
+    <h4>Save your journal entry:</h4>
+    <input
+      type="checkbox"
+      name="saveJournal"
+      checked={form.saveJournal}
+      onChange={handleChange}
+      className="form-checkbox"
+    />
+  </label>
+  <button type="submit" className="form-button">Get today's scripture</button>
+</form>
+{isLoading && <div className="loading">Generating your scripture. Please wait...</div>}
 
-      <h2>How is your day</h2>
-      <form onSubmit={createForm} className="journal-form">
-        <label className="form-label">
-        <h4>Mood:</h4>
-          <h6>(Choose an emoji that represents your current mood)</h6>
-          <select name="mood" value={form.mood} onChange={handleChange} className="form-select">
-            <option value="">😁</option>
-            {moodOptions.map((mood, index) => (
-              <option key={index} value={mood}>
-                {mood}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="form-label">
-        <h4>Share your thoughts and feelings for today</h4>
-          <input
-            type="text"
-            name="textField"
-            placeholder="It's always best to release your feelings"
-            onChange={handleChange}
-            value={form.textField}
-            className="form-input"
-          />
-        </label>
-        <label className="form-label">
-          <h4>Save journal</h4>
-          <input
-            type="checkbox"
-            name="saveJournal"
-            checked={form.saveJournal}
-            onChange={handleChange}
-            className="form-checkbox"
-          />
-        </label>
-        <button type="submit" className="form-button">Click here for today scripture</button>
-      </form>
-      {isLoading && <div className="loading">Generating your scripture. Please wait...</div>}
-
-    </>
+</>
   );
 }
