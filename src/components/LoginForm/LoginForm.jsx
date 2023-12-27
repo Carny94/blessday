@@ -32,12 +32,24 @@ export default function LoginForm({ setUser }) {
   return (
     <div>
       <div className="form-container">
-        <section className="login-form">
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <section className="login-form"  >
+        <form autoComplete="off" onSubmit={handleSubmit} className="standard-form">
           <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
+          <input 
+            type="text" 
+            name="email" 
+            value={credentials.email} 
+            onChange={handleChange} 
+            required 
+            />
           <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+          <input 
+            type="password" 
+            name="password" 
+            value={credentials.password} 
+            onChange={handleChange} 
+            required 
+          />
           <button type="submit">LOG IN</button>
         </form>
         </section>

@@ -19,6 +19,12 @@
     justify-content: center;
     margin-right: 5%;
   }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
   .zen-photo img{
     height: 500px;
     width:auto;
