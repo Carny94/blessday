@@ -32,6 +32,7 @@ export default function LoginForm({ setUser }) {
   return (
     <div>
       <div className="form-container">
+        <section className="login-form">
         <form autoComplete="off" onSubmit={handleSubmit}>
           <label>Email</label>
           <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
@@ -39,6 +40,10 @@ export default function LoginForm({ setUser }) {
           <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
           <button type="submit">LOG IN</button>
         </form>
+        </section>
+      <section className="zen-photo">
+        <img src = "/scenery.jpg"  />
+      </section>
       </div>
       <p className="error-message">&nbsp;{error}</p>
     </div>
