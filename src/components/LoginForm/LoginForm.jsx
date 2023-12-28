@@ -41,6 +41,7 @@ export default function LoginForm({ setUser }) {
             value={credentials.email} 
             onChange={handleChange} 
             required 
+            placeholder='email here'
             />
           <label>Password</label>
           <input 
@@ -49,6 +50,7 @@ export default function LoginForm({ setUser }) {
             value={credentials.password} 
             onChange={handleChange} 
             required 
+            placeholder='password here'
           />
           <button type="submit">LOG IN</button>
         </form>

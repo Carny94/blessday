@@ -11,7 +11,7 @@ import HomePage from '../HomePage/HomePage';
 
 
 export default function App() {
-  const [user, setUser] = useState(getUser());
+  const [user, setUser] = useState(getUser(null));
   //initialize user to null
   
   const [journal, setJournal] = useState([]);

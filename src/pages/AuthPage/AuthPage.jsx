@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './AuthPage.css';
 import SignUpForm from '../../components/SignUpForm/SignUpForm'
 import LoginForm from '../../components/LoginForm/LoginForm'
 
@@ -15,7 +16,7 @@ export default function AuthPage({setUser}) {
   
     <>
       <h1>BLESSDAY</h1>
-      <button onClick={handleClick}>{isNewUser ? ' New Account ' : 'Login'}</button>
+      <button className="toggle-button" onClick={handleClick}>{isNewUser ? ' Click Here To Create New Account ' : 'Click Here To Login'}</button>
       { isNewUser ?
       <>
         <SignUpForm setUser={setUser}/>
