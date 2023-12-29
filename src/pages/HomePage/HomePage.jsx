@@ -24,15 +24,16 @@ export default function HomePage () {
            
       </section>
       <img src = "./branches.jpg" alt="flowers"></img>
-     
-
-      {/* <section classname="about-app-container">
-        <h1>Welcome to Blessday! We're thrilled to have you here. This is a safe and supportive space where you can freely express your thoughts and feelings.
-           Thank you for joining our community.</h1>
-    </section> */}
 </div>
+< div className="about-app-container">
+  <h1>Mission Accomplishing</h1>
+      <p>
+         We're thrilled to have you here. This is a safe and supportive space <br />where you can freely express your thoughts and feelings.
+        Thank you for joining our community.
+      </p>
+    </div>
   
-    <div classname="button">
+    <div className="button">
         <button onClick={nextPage}>CLICK HERE</button>
     </div>
     </>

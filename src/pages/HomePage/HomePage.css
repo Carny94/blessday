@@ -25,12 +25,7 @@ img,
     display: flex;
     background-color: rgb(201, 121, 222);
     justify-content: space-around;
-    
-}
-
-p {
-  display: flex;
-  justify-content: center;
+    margin-bottom: 2%;
 }
 
 .section {
@@ -40,6 +35,13 @@ p {
     flex-direction: row;
     overflow: hidden; /* Prevent children from overflowing */
   }
+
+.about-app-container {
+  scroll-snap-type: y mandatory;
+  display: flex;
+  background-color: rgb(162, 97, 178);
+  justify-content: space-around;
+}
 
 
 
