@@ -1,11 +1,50 @@
 
-img[src="./flowers.jpg"] {
-    width: 800px;
-    height: 400px;
+img[src="./branches.jpg"] {
+    width: 500px;
+    height: auto;
     margin: 10px;
     border: 1px solid black;
-
   }
+.header-verse {
+  width: 30%; 
+  margin-left: 10%; 
+  margin-top: 10%;
+  text-align: center;
+  
+}
+img, 
+.header-verse {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.homepage-container {
+  /* border: 1px solid black; */
+    scroll-snap-type: y mandatory;
+    display: flex;
+    background-color: rgb(201, 121, 222);
+    justify-content: space-around;
+    
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden; /* Prevent children from overflowing */
+  }
+
+
+
+
+
   
   
   
