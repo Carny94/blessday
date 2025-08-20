@@ -12,7 +12,7 @@ export default function HomePage () {
 
     return (
       <>
- <section classname="header">
+ <section className="header">
    <h1>BLESSDAY</h1>
  </section>
 
@@ -28,11 +28,18 @@ export default function HomePage () {
 < div className="about-app-container">
   <h1>Mission Accomplishing</h1>
       <p>
-         We're thrilled to have you here. This is a safe and supportive space <br />where you can freely express your thoughts and feelings.
-        Thank you for joining our community.
+         We're thrilled to have you here. This is a safe and supportive space 
+         <br />where you can freely express your thoughts and feelings.
+         Blessday, also provide supportive scriptures after each journal entry. 
+        <br /> Thank you for joining our community.
       </p>
     </div>
-  
+    <div className="lets-get-started">
+  <p>CLICK HERE TO GET STARTED</p>
+  <section className="bible-img">
+    <img src="./bible.jpg" alt="Bible" />
+  </section>
+</div>
     <div className="button">
         <button onClick={nextPage}>CLICK HERE</button>
     </div>

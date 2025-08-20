@@ -1,4 +1,7 @@
-
+.header {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 img[src="./branches.jpg"] {
     width: 500px;
     height: auto;
@@ -41,7 +44,30 @@ img,
   display: flex;
   background-color: rgb(162, 97, 178);
   justify-content: space-around;
+  margin-bottom: 2%;
 }
+
+.lets-get-started {
+  scroll-snap-type: y mandatory;
+  display: flex;
+  background-color: rgb(162, 97, 178);
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+.lets-get-started p {
+  text-align: center;
+  margin-top: 170px;
+}
+
+img[src="./bible.jpg"] {
+  width: 500px;
+  height: auto;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+
+
 
 
 

@@ -12,7 +12,6 @@ import HomePage from '../HomePage/HomePage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  //initialize user to null
   
   const [journal, setJournal] = useState([]);
 console.log(journal)
@@ -22,14 +21,10 @@ console.log(journal)
       <>
         <NavBar user= {user} setUser={setUser}/>
         <Routes>
-          {/* Routes components in here */}
-          
           <Route path="/journal/new" element={<CreateJournalForm setJournal={setJournal} />} />
           <Route path="/journal/journalSaved" element={<SavedJournalPage journal={journal} setJournal={setJournal}/>} />
           <Route path="/scripture" element={<ScriptureDisplay />} />
           <Route path="/" element={<HomePage />} />
-
-
         </Routes>
         </>
         :
