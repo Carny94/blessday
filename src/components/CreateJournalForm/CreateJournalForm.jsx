@@ -56,7 +56,7 @@ try {
   
   return (
     <>
-<h2>How's your day going?</h2>
+<h2>Bless Day</h2>
 <form onSubmit={createForm} className="journal-form">
   <label className="form-label">
     <h4>SELECT YOUR MOOD:</h4>
